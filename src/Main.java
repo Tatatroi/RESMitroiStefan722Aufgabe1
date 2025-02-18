@@ -18,7 +18,14 @@ public class Main {
         String filename = "src/ninja_events.json";
         List<NinjaSchlachten> ninjas = new ArrayList<>();
         ninjas = readJSONFile(filename);
-        System.out.println(ninjas);
+//        System.out.println(ninjas);
+
+        System.out.println("Enter Krafpunkte zu fiter: ");
+        Scanner scanner = new Scanner(System.in);
+
+        double x = Double.parseDouble(scanner.nextLine());
+
+        erstefilter(ninjas, x);
 
     }
 
@@ -68,5 +75,14 @@ public class Main {
         return ninjas;
     }
 
+    /**
+     * filter der ninjas das hat der score grosser als 5000
+     * @param ninjas
+     * @param score
+     */
+    public static void erstefilter(List<NinjaSchlachten> ninjas, double score){
+        ninjas.stream().filter(n -> n.getKraftPunkte() > 5000).map(n -> n.getName()).distinct()
+                .forEach(n -> System.out.println(n));
+    }
 
 }
