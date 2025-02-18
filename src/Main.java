@@ -23,9 +23,11 @@ public class Main {
         System.out.println("Enter Krafpunkte zu fiter: ");
         Scanner scanner = new Scanner(System.in);
 
-        double x = Double.parseDouble(scanner.nextLine());
+//        double x = Double.parseDouble(scanner.nextLine());
 
-        erstefilter(ninjas, x);
+//        erstefilter(ninjas, x);
+
+        zweiteFilter(ninjas);
 
     }
 
@@ -83,6 +85,15 @@ public class Main {
     public static void erstefilter(List<NinjaSchlachten> ninjas, double score){
         ninjas.stream().filter(n -> n.getKraftPunkte() > 5000).map(n -> n.getName()).distinct()
                 .forEach(n -> System.out.println(n));
+    }
+
+    /**
+     * return in absteigend Ordnung die ninjas die hat die Stufe Jonin
+     * @param ninjas
+     */
+    public static void zweiteFilter(List<NinjaSchlachten> ninjas){
+        ninjas.stream().filter(n -> n.getStufe().equals("Jonin")).sorted(Comparator.comparing(NinjaSchlachten::getDatum).reversed()).
+                map(n-> n.getDatum() + ": " + n.getName() + " - " + n.getDescription()).forEach(System.out::println);
     }
 
 }
