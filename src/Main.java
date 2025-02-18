@@ -96,4 +96,37 @@ public class Main {
                 map(n-> n.getDatum() + ": " + n.getName() + " - " + n.getDescription()).forEach(System.out::println);
     }
 
+//    public static void writeTxt(List<NinjaSchlachten> patienten) {
+//        String filename = "fallanzahl.txt";
+//        Map<String,Integer> ninjaS = new HashMap<>();
+//        for (Patient p : patienten) {
+//            nrCases.put(p.getKrankenhaus(), nrCases.getOrDefault(p.getKrankenhaus(), 0) + 1);
+//        }
+//
+//        for(NinjaSchlachten n : patienten){
+//            ninjaS.put()
+//        }
+//
+////        List<Map.Entry<String, Integer>> sortedNumberEvents = nrCases.entrySet().stream().sorted((e1,e2) -> Integer.compare(e2.getValue(),e1.getValue())).toList();
+////
+////        sortedNumberEvents.stream().sorted(Comparator.comparing(Map.Entry::getKey));
+//        List<Map.Entry<String, Integer>> sortedNumberEvents = nrCases.entrySet().stream()
+//                .sorted(Comparator.comparing(Map.Entry<String, Integer>::getValue).reversed() // Descrescător după valoare
+//                        .thenComparing(Map.Entry::getKey)) // Apoi alfabetic după cheie
+//                .toList();
+//
+//        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/Ex2/fallanzahl.txt"))) {
+//            for (Map.Entry<String, Integer> entry : sortedNumberEvents) {
+//                bw.write(entry.getKey() + "$" + entry.getValue());
+//                bw.newLine();
+//            }
+//            System.out.println("\nHouse points saved to 'fallanzahl.txt'.");
+//        } catch (IOException e) {
+//            System.err.println("Error writing to file: " + e.getMessage());
+//        }
+//
+//
+//    }
+
+
 }
